@@ -186,14 +186,20 @@
   .menu{background:var(--plum);color:var(--cream);padding:124px 0}
   .menu .head{max-width:620px;margin-bottom:18px}.menu h2{margin-top:12px}
   .menu .head p{color:rgba(246,239,226,.76);margin-top:14px}
-  .menu-sub{grid-column:1/-1;display:flex;align-items:center;gap:16px;margin:34px 0 6px;color:var(--wheat-lt)}
-  .menu-sub span{font-family:var(--display);font-weight:700;font-size:1.2rem;white-space:nowrap}
-  .menu-sub::after{content:"";flex:1;height:1px;background:var(--line)}
+  .menu-sub{grid-column:1/-1;margin:36px 0 8px;padding-bottom:10px;border-bottom:1px solid var(--line);
+    color:var(--wheat-lt);scroll-margin-top:84px}
+  .menu-sub span{font-family:var(--display);font-weight:700;font-size:1.2rem}
+  .menu-sub small{font-family:var(--sans);font-weight:600;font-size:.8rem;color:rgba(246,239,226,.58);margin-left:9px}
+  /* category jump chips — easier menu navigation */
+  .menu-jump{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 4px}
+  .menu-jump a{font-size:.84rem;font-weight:800;color:var(--cream);background:rgba(246,239,226,.07);
+    border:1px solid var(--line);padding:8px 15px;border-radius:999px;transition:background .25s,color .25s,border-color .25s}
+  .menu-jump a:hover{background:var(--wheat-lt);color:var(--ink);border-color:var(--wheat-lt)}
   .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 40px}
-  .dish{padding:15px 0;border-bottom:1px dashed rgba(246,239,226,.16)}
+  .dish{padding:15px 0;border-bottom:1px dashed rgba(246,239,226,.16);min-width:0}
   .dish .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
-  .dish .top h3{flex:1}
-  .dish h3{font-family:var(--sans);font-weight:800;font-size:1.1rem;line-height:1.25}
+  .dish .top h3{flex:1;min-width:0}
+  .dish h3{font-family:var(--sans);font-weight:800;font-size:1.1rem;line-height:1.25;overflow-wrap:break-word}
   .dish .tag{font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--wheat-lt);padding:3px 8px;border-radius:6px;white-space:nowrap;margin-left:8px}
   .dish .price{font-family:var(--display);font-weight:700;color:var(--wheat-lt);font-size:1.05rem;white-space:nowrap}
   .dish p{color:rgba(246,239,226,.66);font-size:.95rem;margin-top:5px}
@@ -207,7 +213,7 @@
   .menu-fb b{color:var(--cream)}
   .menu-fb .go{color:var(--wheat-lt);font-weight:800;white-space:nowrap}
   .menu-note{margin-top:30px;font-size:.9rem;color:rgba(246,239,226,.62)}
-  @media(max-width:740px){.menu-grid{grid-template-columns:1fr;gap:2px}}
+  @media(max-width:740px){.menu-grid{grid-template-columns:1fr;gap:0}.dish{padding:14px 0}.menu-fb{margin-bottom:10px}}
 
   /* ---------- FEATURES ---------- */
   .feats{background:var(--ink);color:var(--cream);padding:114px 0;overflow:hidden}
@@ -390,23 +396,30 @@
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 11.01 10.12 11.93v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.25h3.32l-.53 3.49h-2.79V24C19.61 23.08 24 18.09 24 12.07Z"/></svg>
         <span><b>Daily specials change with the day</b> — see what's fresh today on <span class="go">Facebook →</span></span>
       </a>
+      <nav class="menu-jump reveal d2" aria-label="Jump to menu section">
+        <a href="#sec-pierogi">Pierogi</a>
+        <a href="#sec-dinners">Dinners</a>
+        <a href="#sec-sandwiches">Sandwiches</a>
+        <a href="#sec-sides">Soups &amp; Sides</a>
+        <a href="#sec-drinks">Drinks</a>
+      </nav>
     </div>
     <div class="menu-grid">
-      <div class="menu-sub reveal"><span>Pierogi · pan-fried in butter &amp; onion</span></div>
+      <div class="menu-sub reveal" id="sec-pierogi"><span>Pierogi</span><small>pan-fried in butter &amp; onion</small></div>
       <p class="menu-flavors reveal">Six flavors: <b>Potato</b>, <b>Potato &amp; Cheddar</b>, <b>Potato &amp; Farmer Cheese</b>, <b>Sweet Cheese</b>, <b>Sauerkraut</b>, and <b>Sauerkraut &amp; Mushroom</b>.</p>
       <div class="dish reveal"><div class="top"><h3>Pierogi Dinner</h3><span class="price">$7.75</span></div><p>Six pierogi pan-fried in butter &amp; onion, with cole slaw (or applesauce) and a dinner roll.</p></div>
       <div class="dish reveal d1"><div class="top"><h3>Parma Mix Plate <span class="tag">Get this</span></h3><span class="price">$10.75</span></div><p>One of each flavor with a stuffed cabbage, sour cream &amp; slaw. Locals just call it "a plate."</p></div>
       <div class="dish reveal"><div class="top"><h3>Tour of Poland <span class="tag">Sampler</span></h3><span class="price">$11.25</span></div><p>One stuffed cabbage, kielbasa &amp; kraut, two potato pierogi, a vegetable &amp; a roll.</p></div>
       <div class="dish reveal d1"><div class="top"><h3>Side of Pierogies</h3><span class="price">$2.25</span></div><p>A side order, pan-fried with onions.</p></div>
 
-      <div class="menu-sub reveal"><span>Polish Dinners · with mashed potatoes, vegetable &amp; a roll</span></div>
+      <div class="menu-sub reveal" id="sec-dinners"><span>Polish Dinners</span><small>with mashed potatoes, vegetable &amp; a roll</small></div>
       <div class="dish reveal"><div class="top"><h3>Stuffed Cabbage / Golabki <span class="tag">1 · 2 · 3</span></h3><span class="price">$7.25 / 9.25 / 11.25</span></div><p>Homemade cabbage rolls simmered in tomato.</p></div>
       <div class="dish reveal d1"><div class="top"><h3>Smoked Kielbasa Dinner</h3><span class="price">$8.94</span></div><p>Smoked kielbasa &amp; sauerkraut.</p></div>
       <div class="dish reveal"><div class="top"><h3>Breaded Pork Chops</h3><span class="price">$10.25</span></div><p>Two boneless pork chops.</p></div>
       <div class="dish reveal d1"><div class="top"><h3>Shrimp Dinner</h3><span class="price">$10.25</span></div><p>Deep-fried shrimp with cocktail sauce, cole slaw &amp; a roll.</p></div>
       <div class="dish reveal"><div class="top"><h3>Meatloaf <span class="tag">Fridays</span></h3><span class="price">$9.50</span></div><p>Homemade, with gravy.</p></div>
 
-      <div class="menu-sub reveal"><span>Sandwiches &amp; Burgers</span></div>
+      <div class="menu-sub reveal" id="sec-sandwiches"><span>Sandwiches &amp; Burgers</span></div>
       <div class="dish reveal"><div class="top"><h3>Polish Boy <span class="tag">Must-try</span></h3><span class="price">$6.50</span></div><p>Smoked kielbasa &amp; sauerkraut on a hoagie bun.</p></div>
       <div class="dish reveal d1"><div class="top"><h3>Club Sandwich</h3><span class="price">$7.25</span></div><p>Ham, turkey, bacon, Swiss, lettuce, tomato &amp; mayo on toast.</p></div>
       <div class="dish reveal"><div class="top"><h3>Deluxe Burger</h3><span class="price">$6.25</span></div><p>Lettuce, tomato, onion &amp; pickle. (Add cheese $6.50.)</p></div>
@@ -417,7 +430,7 @@
       <div class="dish reveal d1"><div class="top"><h3>Grilled Ham &amp; Cheese</h3><span class="price">$5.25</span></div><p>A diner classic.</p></div>
       <div class="dish reveal"><div class="top"><h3>Grilled Cheese</h3><span class="price">$4.25</span></div><p>Toasty and simple.</p></div>
 
-      <div class="menu-sub reveal"><span>Soups, Salads &amp; Sides</span></div>
+      <div class="menu-sub reveal" id="sec-sides"><span>Soups, Salads &amp; Sides</span></div>
       <div class="dish reveal"><div class="top"><h3>Homemade Chicken Noodle Soup</h3><span class="price">$2.25</span></div><p>Made in the pot.</p></div>
       <div class="dish reveal d1"><div class="top"><h3>Garden Salad</h3><span class="price">$5.95</span></div><p>Fresh and crisp. (Side salad $3.95.)</p></div>
       <div class="dish reveal"><div class="top"><h3>Cabbage Roll · à la carte</h3><span class="price">$3.50</span></div><p>One homemade golabki.</p></div>
@@ -425,7 +438,7 @@
       <div class="dish reveal"><div class="top"><h3>Sauerkraut</h3><span class="price">$2.25</span></div><p>A side order. (Cole slaw, cucumber salad or apple sauce $1.95.)</p></div>
       <div class="dish reveal d1"><div class="top"><h3>Sour Cream, Gravy or Dinner Roll</h3><span class="price">$0.50</span></div><p>Extra sides.</p></div>
 
-      <div class="menu-sub reveal"><span>Beverages</span></div>
+      <div class="menu-sub reveal" id="sec-drinks"><span>Beverages</span></div>
       <div class="dish reveal"><div class="top"><h3>Coffee, Iced Tea, Hot Tea or Lemonade</h3><span class="price">$1.85</span></div></div>
       <div class="dish reveal d1"><div class="top"><h3>Milk or Apple Juice</h3><span class="price">$1.50</span></div></div>
       <div class="dish reveal"><div class="top"><h3>Can Soft Drinks</h3><span class="price">$1.00</span></div></div>
